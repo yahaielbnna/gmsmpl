@@ -19,6 +19,8 @@
 // $('h1').setId('sfra')
 // $('h1').removeId()
 // console.log($('body').getCssStyle('background'));
+console.log($('h1'));
+console.log($('h1').element());
 
 $('h1').event('click', _ => {
 

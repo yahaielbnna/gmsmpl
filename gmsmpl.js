@@ -217,7 +217,7 @@ function $(element){
                     el.style.display = value;
                     return self;
                 },
-                alignItem: value => {
+                alignItems: value => {
                     el.style.alignItems = value;
                     return self;
                 },
