@@ -19,7 +19,7 @@ then you can use your own script file with the power of gmsmpl
 
 First, you need to select an element from the page. gmsmpl made it easier. Just using this function.
 ``` $('query') ```
-from this function, you can use all gmsmpl functions in this way
+from this function, you can use all gmsmpl's $() functions in this way
 ```
 $('query')
            .functionName(parameters)
@@ -27,7 +27,7 @@ $('query')
            . ETC...
 ```
 
-<b>But what are gmsmpl functions?</b>
+<b>But what are gmsmpl's $() functions?</b>
 
 ## gmsmpl's $() functions.
 
@@ -169,5 +169,149 @@ $('query')
     <td>padding</td>
     <td>Set a padding to your element</td>
     <td>element.style.padding = padding;</td>
+  </tr>
+  <tr>
+    <td>fontWeight()</td>
+    <td>fontWeight</td>
+    <td>Set a font weight to your element</td>
+    <td>element.style.fontWeight = fontWeight;</td>
+  </tr>
+  <tr>
+    <td>fontFamily()</td>
+    <td>fontFamily</td>
+    <td>Set a font family to your element</td>
+    <td>element.style.fontFamily = fontFamily;</td>
+  </tr>
+  <tr>
+    <td>fontSize()</td>
+    <td>fontSize</td>
+    <td>Set font size to your element</td>
+    <td>element.style.fontSize = fontSize;</td>
+  </tr>
+  <tr>
+    <td>bg() / background()</td>
+    <td>background</td>
+    <td>Set background to your element</td>
+    <td>element.style.background = background;</td>
+  </tr>
+  <tr>
+    <td>color()</td>
+    <td>color</td>
+    <td>Set color to your element</td>
+    <td>element.style.color = color;</td>
+  </tr>
+  <tr>
+    <td>border()</td>
+    <td>border</td>
+    <td>Set border to your element</td>
+    <td>element.style.border = border;</td>
+  </tr>
+  <tr>
+    <td>radius()</td>
+    <td>radius</td>
+    <td>Set border radius to your element</td>
+    <td>element.style.borderRadius = radius;</td>
+  </tr>
+  <tr>
+    <td>TLradius()</td>
+    <td>radius</td>
+    <td>Set border top left radius to your element</td>
+    <td>element.style.borderTopLeftRadius = radius;</td>
+  </tr>
+  <tr>
+    <td>TRradius()</td>
+    <td>radius</td>
+    <td>Set border top right radius to your element</td>
+    <td>element.style.borderTopRightRadius = radius;</td>
+  </tr>
+  <tr>
+    <td>BLradius()</td>
+    <td>radius</td>
+    <td>Set border bottom left radius to your element</td>
+    <td>element.style.borderBottomLeftRadius = radius;</td>
+  </tr>
+  <tr>
+    <td>BRradius()</td>
+    <td>radius</td>
+    <td>Set border bottom right radius to your element</td>
+    <td>element.style.borderBottomRightRadius = radius;</td>
+  </tr>
+  <tr>
+    <td>shadow()</td>
+    <td>shadow</td>
+    <td>Set box-shadow to your element</td>
+    <td>element.style.boxShadow = shadow;</td>
+  </tr>
+  <tr>
+    <td>position()</td>
+    <td>position</td>
+    <td>Set position to your element</td>
+    <td>element.style.position = position;</td>
+  </tr>
+  <tr>
+    <td>top()</td>
+    <td>value</td>
+    <td>Set top distance to your element</td>
+    <td>element.style.top = value;</td>
+  </tr>
+  <tr>
+    <td>bottom()</td>
+    <td>value</td>
+    <td>Set bottom distance to your element</td>
+    <td>element.style.bottom = value;</td>
+  </tr>
+  <tr>
+    <td>left()</td>
+    <td>value</td>
+    <td>Set left distance to your element</td>
+    <td>element.style.left = value;</td>
+  </tr>
+  <tr>
+    <td>right()</td>
+    <td>value</td>
+    <td>Set right distance to your element</td>
+    <td>element.style.right = value;</td>
+  </tr>
+  <tr>
+    <td>transform()</td>
+    <td>value</td>
+    <td>Set transform to your element</td>
+    <td>element.style.transform = value;</td>
+  </tr>
+  <tr>
+    <td>z() / zIndex()</td>
+    <td>value</td>
+    <td>Set z-index to your element</td>
+    <td>element.style.zIndex = value;</td>
+  </tr>
+  <tr>
+    <td>opacity()</td>
+    <td>value</td>
+    <td>Set opacity to your element</td>
+    <td>element.style.opacity = value;</td>
+  </tr>
+  <tr>
+    <td>display()</td>
+    <td>value</td>
+    <td>Set display to your element</td>
+    <td>element.style.display = value;</td>
+  </tr>
+  <tr>
+    <td>alignItems()</td>
+    <td>value</td>
+    <td>Set align to your element items</td>
+    <td>element.style.alignItems = value;</td>
+  </tr>
+  <tr>
+    <td>justify() / justifyContent()</td>
+    <td>value</td>
+    <td>Set justify-content to your element style</td>
+    <td>element.style.justifyContent = value;</td>
+  </tr>
+  <tr>
+    <td>cursor()</td>
+    <td>value</td>
+    <td>Set cursor to your element style</td>
+    <td>element.style.cursor = value;</td>
   </tr>
 </table>
