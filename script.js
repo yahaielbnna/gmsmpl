@@ -34,7 +34,7 @@ $('h1').event('click', _ => {
                 .radius(15)
                 .shadow('0 5px 7px #cccccc7a')
                 .display('flex')
-                .alignItem('center')
+                .alignItems('center')
                 .justify('center')
                 .padding('40px')
                 .setId('pop-form')
@@ -77,12 +77,12 @@ $('h1').event('click', _ => {
                     .text('Click me !')
                     .addClass('blue-btn');
 
-    formRequst('.container form#requstForm','test/url')
-    formRequst($('.container form#requstForm'),'test/url')
+    // formRequst('.container form#requstForm','test/url')
+    // formRequst($('.container form#requstForm'),'test/url')
     // $('.container div#pop-form').remove();
 });
-requst('https://dummyjson.com/products/1', 'GET', 'json').then(Response=> {
-    console.log(Response);
-});
+// requst('https://dummyjson.com/products/1', 'GET', 'json').then(Response=> {
+//     console.log(Response);
+// });
 
 console.log(Num('712'));
