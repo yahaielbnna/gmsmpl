@@ -151,25 +151,25 @@ $('query')
   <tr>
     <td>createForm()</td>
     <td>className=null, Id=null ,action=null, method=null, target=null</td>
-    <td>Start creating form and add input,button and submit requst without page loading as the following functions show </td>
+    <td>Start creating a form and add an input, button, and submit a request without the page loading as the following functions show</td>
     <td>-- LONG CODE --</td>
   </tr>
   <tr>
     <td>Input()</td>
     <td>name*,type='text',placeholder=null,value=null,className=null,Id=null</td>
-    <td>makes you able to add input into the form</td>
+    <td>makes you able to add an input to the form</td>
     <td>-- LONG CODE --</td>
   </tr>
   <tr>
     <td>button()</td>
     <td>text*, className=null, Id=null, name=null,type='submit'</td>
-    <td>makes you able to add button into the form</td>
+    <td>makes you able to add a button to the form</td>
     <td>-- LONG CODE --</td>
   </tr>
   <tr>
-    <td>formRequst()</td>
+    <td>formRequest()</td>
     <td>url*, responseType = 'json', callBack*, header = {}</td>
-    <td>makes you able to submit the form without page loading. note that: responseType='json' OR responseType='text', callBack -> add the function that will work after submiting and you can use the requst value by set a parameter</td>
+    <td>makes you able to submit the form without page loading. note that: responseType='json' OR responseType='text', callBack -> add the function that will work after submitting and you can use the request value by setting a parameter</td>
     <td>-- LONG CODE --</td>
   </tr>
 

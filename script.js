@@ -76,9 +76,9 @@ $('h1').event('click', _ => {
                     .insert('button')
                     .text('Click me !')
                     .addClass('blue-btn');
-
-    // formRequst('.container form#requstForm','test/url')
-    // formRequst($('.container form#requstForm'),'test/url')
+// 
+    // formRequest('.container form#requstForm','test/url')
+    // formRequest($('.container form#requstForm'),'test/url')
     // $('.container div#pop-form').remove();
 });
 // requst('https://dummyjson.com/products/1', 'GET', 'json').then(Response=> {

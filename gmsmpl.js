@@ -126,7 +126,7 @@ function $(element){
                         console.error(`you should add the button into a form not a ${el.tagName}!`);
                     }
                 },
-                formRequst: (url, responseType = 'json', callBack, header = {}) => {
+                formRequest: (url, responseType = 'json', callBack, header = {}) => {
                     if (el.tagName.toLowerCase() == 'form') {
                         el.addEventListener('submit', async (e) => {
                             try {
@@ -311,7 +311,7 @@ function $(element){
 }
 
 
-async function formRequst(form,url,responseType = 'json',callBack,header={}){
+async function formRequest(form,url,responseType = 'json',callBack,header={}){
     if (typeof form == "string") {
         theform = $(form);
     } else if(typeof form == "object"){
