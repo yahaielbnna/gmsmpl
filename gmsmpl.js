@@ -374,6 +374,31 @@ function getNum(string) {
     return parseInt(numsStr);
 }
 
+// source: w3schools 
+function setCookie(name, value, expiryDate) {
+    const day = new Date();
+    day.setTime(day.getTime() + (expiryDate * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + day.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(cookieName) {
+    let name = cookieName + "=";
+    let cookie = document.cookie.split(';');
+    for (let i = 0; i < cookie.length; i++) {
+        let c = cookie[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+function removeCookie(name) {
+    document.cookie = name + "=;expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+}
 
 // gmsml code functions
 function gmsmple_error_code_warn() {
