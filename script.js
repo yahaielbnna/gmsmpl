@@ -51,9 +51,10 @@ $('h1').event('click', _ => {
                 })
                 .parent()
                 .createForm('form', 'requstForm', true)
-                .Input('name',true,'text','type your name here',null,'input','test')
-                .Input('phone',false,'text','type your phone number here',null,'input')
-                .Input('email',false,'email','type your email here',null,'input')
+                .input('name',true,'text','type your name here',null,'input','test')
+                .input('phone',false,'text','type your phone number here',null,'input')
+                .input('email',false,'email','type your email here',null,'input')
+                .inputContainer('text',false,'text','test field','input-container','input','text field',null,'test-text')
                 .button('click me', 'blue-btn')
                 .formRequest('test', 'post', x => {
                     console.log(x);

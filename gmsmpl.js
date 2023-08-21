@@ -95,7 +95,7 @@ function $(element) {
                     el = new_element;
                     return self;
                 },
-                Input: (name,Mandatory = false,type='text',placeholder=null,value=null,className=null,Id=null) => {
+                input: (name,Mandatory = false,type='text',placeholder=null,value=null,className=null,Id=null) => {
                     if (el.tagName.toLowerCase() == 'form') {
                         let input = document.createElement('input');
                         el.appendChild(input);
@@ -106,6 +106,34 @@ function $(element) {
                         className !== null ? input.classList.add(className) : '';
                         Id !== null ? input.setAttribute('Id', Id) : '';
                         Mandatory ? input.setAttribute('gm-mandatory', 'true') : '';
+                        return self;
+                    } else {
+                        gmsmple_error_code_warn();
+                        console.error(`you should add the input into a form not a ${el.tagName}!`);
+                    }
+                },
+                inputContainer: (name, Mandatory = false, type = 'text', placeholder = null, containerClassName = null,inputClassName = null, labelValue = null,inputValue = null, inputId = null) => {
+                    if (el.tagName.toLowerCase() == 'form') {
+                        let container = document.createElement('div'),
+                            label = document.createElement('label'),
+                            input = document.createElement('input');
+                        el.appendChild(container);
+                        input.name = name;
+                        inputValue !== null ? input.value = inputValue : '';
+                        type !== null ? input.setAttribute('type', type) : '';
+                        placeholder !== null ? input.setAttribute('placeholder', placeholder) : '';
+                        inputClassName !== null ? input.classList.add(inputClassName) : '';
+                        inputId !== null ? input.setAttribute('Id', inputId) : '';
+                        inputId !== null ? label.setAttribute('for', inputId) : '';
+                        Mandatory ? input.setAttribute('gm-mandatory', 'true') : '';
+                        container.classList.add(containerClassName);
+                        container.classList.add('gm-inputContainer');
+                        if (labelValue !== null) {
+                            container.appendChild(label);
+                            label.classList.add('gm-inputLabel');
+                            label.innerText = labelValue;
+                        }
+                        container.appendChild(input);
                         return self;
                     } else {
                         gmsmple_error_code_warn();
@@ -368,7 +396,7 @@ async function formRequest(form,url,responseType = 'json',callBack,header={}){
 }
 
 
-// async function requst(url,method = 'post',responseType = 'json',body=null,header={}){
+// async function request(url,method = 'post',responseType = 'json',body=null,header={}){
 //     try {
 //         // let Fet = await fetch(url, {
 //         //     method: method,
@@ -395,7 +423,7 @@ async function formRequest(form,url,responseType = 'json',callBack,header={}){
 //     }
 // }
 // Gm smpl functions
-function Num(string){
+function num(string){
     return parseInt(string);
 }
 function getNum(string) {
