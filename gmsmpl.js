@@ -1,4 +1,5 @@
-function $(element){
+var gmErrorInputClassName = 'gm-error';
+function $(element) {
     try {
         let el;
         if (typeof element == "string") {
@@ -81,18 +82,20 @@ function $(element){
                 getCssStyle: name => {
                     return getComputedStyle(el).getPropertyValue(name);
                 },
-                createForm: (className=null, Id=null ,action=null, method=null, target=null) => {
+                createForm: (className=null, Id=null, hasValidation = false ,action=null, method=null, target=null) => {
                     let new_element = document.createElement('form');
                     el.appendChild(new_element);
                     className !== null ? new_element.classList.add(className) : '';
                     Id !== null ? new_element.setAttribute('id',Id) : '';
                     action !==null ? new_element.setAttribute('action',action) : '';
                     method !==null ? new_element.setAttribute('method',method) : '';
-                    target !==null ? new_element.setAttribute('target',target) : '';
+                    target !== null ? new_element.setAttribute('target', target) : '';
+                    hasValidation ? new_element.setAttribute('gm-validate', 'true') : '';
+                    hasValidation ? new_element.setAttribute('novalidate', '') : '';
                     el = new_element;
                     return self;
                 },
-                Input: (name,type='text',placeholder=null,value=null,className=null,Id=null) => {
+                Input: (name,Mandatory = false,type='text',placeholder=null,value=null,className=null,Id=null) => {
                     if (el.tagName.toLowerCase() == 'form') {
                         let input = document.createElement('input');
                         el.appendChild(input);
@@ -100,9 +103,9 @@ function $(element){
                         value !== null ? input.value = value : '';
                         type !== null ? input.setAttribute('type', type) : '';
                         placeholder !== null ? input.setAttribute('placeholder', placeholder) : '';
-                        className !== null ? input.setAttribute('className', className) : '';
+                        className !== null ? input.classList.add(className) : '';
                         Id !== null ? input.setAttribute('Id', Id) : '';
-                        
+                        Mandatory ? input.setAttribute('gm-mandatory', 'true') : '';
                         return self;
                     } else {
                         gmsmple_error_code_warn();
@@ -117,7 +120,7 @@ function $(element){
                         
                         name !== null ? button.name = name : '';
                         type !== null ? button.setAttribute('type', type) : '';
-                        className !== null ? button.setAttribute('className', className) : '';
+                        className !== null ? button.classList.add(className) : '';
                         Id !== null ? button.setAttribute('Id', Id) : '';
                         
                         return self;
@@ -131,6 +134,32 @@ function $(element){
                         el.addEventListener('submit', async (e) => {
                             try {
                                 e.preventDefault();
+                                let validate = true,
+                                    msg = null;
+                                    inputs = el.querySelectorAll('input[gm-mandatory="true"]');
+                                    inputs.forEach(input => {
+                                        if (isEmpty(input.value)) {
+                                            input.classList.add(gmErrorInputClassName)
+                                            msg = { 'code': 302, 'massege': `${input.name} field is empty`,'name':input.name,'id':input.id,'input':input};
+                                            validate = false;
+                                        }
+                                    });
+                                    if (!validate) {
+                                        return callBack(msg);
+                                    }
+                                    if (Boolean(el.getAttribute('gm-validate'))) {
+                                        emailInputs = el.querySelectorAll('input[type="email"]');
+                                        emailInputs.forEach(input => {
+                                            if (!emailValidation(input.value)) {
+                                                validate = false;
+                                                input.classList.add(gmErrorInputClassName)
+                                                msg = { 'code': 302, 'massege': `${input.name} field's value doesn't correct ! `,'name':input.name,'id':input.id,'input':input};
+                                            }
+                                        });
+                                    }
+                                    if (!validate) {
+                                        return callBack(msg);
+                                    }
                                 let formData = await new FormData(el),
                                     searchParam = await new URLSearchParams();
                                 for (const pair of formData) {
@@ -365,13 +394,22 @@ async function formRequest(form,url,responseType = 'json',callBack,header={}){
 //         console.error(e);
 //     }
 // }
-
+// Gm smpl functions
 function Num(string){
     return parseInt(string);
 }
 function getNum(string) {
     var numsStr = string.replace(/[^0-9]/g,'');
     return parseInt(numsStr);
+}
+function isEmpty(string) {
+    return string == "" ? true : false;
+}
+function emailValidation(email) {
+    return email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+}
+function phoneValidation(phone) {
+    return phone.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
 }
 
 // source: w3schools 

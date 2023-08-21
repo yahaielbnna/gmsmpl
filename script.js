@@ -21,7 +21,6 @@
 // console.log($('body').getCssStyle('background'));
 console.log($('h1'));
 console.log($('h1').element());
-
 $('h1').event('click', _ => {
 
     $('.container')
@@ -51,31 +50,39 @@ $('h1').event('click', _ => {
                     $('.container div#pop-form').remove();
                 })
                 .parent()
-                .insert('form')
-                    .setId('requstForm')
-                    .width('100%')
+                .createForm('form', 'requstForm', true)
+                .Input('name',true,'text','type your name here',null,'input','test')
+                .Input('phone',false,'text','type your phone number here',null,'input')
+                .Input('email',false,'email','type your email here',null,'input')
+                .button('click me', 'blue-btn')
+                .formRequest('test', 'post', x => {
+                    console.log(x);
+                })
+                // .insert('form')
+                //     .setId('requstForm')
+                //     .width('100%')
 
-                    .insert('h2')
-                    .text('test form')
-                    .parent()
+                //     .insert('h2')
+                //     .text('test form')
+                //     .parent()
 
-                    .insert('input')
-                    .addAttr('type','text')
-                    .addAttr('name','name')
-                    .addAttr('placeholder','Type your name here')
-                    .addClass('input')
-                    .parent()
+                //     .insert('input')
+                //     .addAttr('type','text')
+                //     .addAttr('name','name')
+                //     .addAttr('placeholder','Type your name here')
+                //     .addClass('input')
+                //     .parent()
 
-                    .insert('input')
-                    .addAttr('type','text')
-                    .addAttr('name','phone')
-                    .addAttr('placeholder','Type your phone number here')
-                    .addClass('input')
-                    .parent()
+                //     .insert('input')
+                //     .addAttr('type','text')
+                //     .addAttr('name','phone')
+                //     .addAttr('placeholder','Type your phone number here')
+                //     .addClass('input')
+                //     .parent()
 
-                    .insert('button')
-                    .text('Click me !')
-                    .addClass('blue-btn');
+                //     .insert('button')
+                //     .text('Click me !')
+                //     .addClass('blue-btn');
 // 
     // formRequest('.container form#requstForm','test/url')
     // formRequest($('.container form#requstForm'),'test/url')

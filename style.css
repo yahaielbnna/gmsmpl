@@ -49,3 +49,6 @@ body{
     background: #2196f3;
     color: #f1f5f9;
 }
+input.gm-error{
+border-color: red;
+}
