@@ -327,6 +327,10 @@ function $(element) {
                     el.style.transform = value;
                     return self;
                 },
+                transition: duration => {
+                    typeof duration == "number" ? el.style.transition = `${duration}s` : el.style.transition = duration;
+                    return self;
+                },
                 z: value=>{
                     el.style.zIndex = value;
                     return self;
