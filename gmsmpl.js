@@ -225,6 +225,20 @@ function $(element) {
                         el.style.height = height;
                     return self
                 },
+                maxWidth: width => {
+                    if (typeof width == "number")
+                        el.style.maxWidth = width + "px";
+                    else
+                        el.style.maxWidth = width;
+                    return self
+                },
+                maxHeight: height => {
+                    if (typeof height == "number")
+                        el.style.maxHeight = height + "px";
+                    else
+                        el.style.maxHeight = height;
+                    return self
+                },
                 margin: margin => {
                     el.style.margin = margin;
                     return self
@@ -361,6 +375,10 @@ function $(element) {
                 },
                 cursor: value => {
                     el.style.cursor = value;
+                    return self;
+                },
+                listStyle: value => {
+                    el.style.listStyle = value;
                     return self;
                 },
             }
