@@ -1,10 +1,10 @@
 <p ><img src="https://github.com/yahaielbnna/gmsmpl/blob/main/gmsmpl.png" width="100" alt="gmsmpl Logo"></p>
 
-# What is gmsmpl?
+# What is gmsmpl? 🤷‍♂️
  <p>gmsmpl is a JavaScript library that has been developed to help web developers especially Font-end developers to control the HTML element from the Javascript with a low size of codes. That makes the developer able to use DOM with simple functions and style the elements with CSS's properties. Not that only, but there are some functions that work to simplify your code from the complex and the big size of codes.</p>
-<b>Make your website alive and awesome with a low number of codes!</b>
+<b>Make your website alive and awesome with a low number of codes!🌟</b>
 
-# Why gmsmpl? 
+# Why gmsmpl? 🤔
 <ul>
   <li>
     <b>High performance</b>
@@ -24,7 +24,7 @@
   </li>
 </ul>
 
-# How to set up gmsmpl?
+# How to set up gmsmpl? 🔥
 
 <span>
 Just download the `gmsmpl.js` file and include it in the first of your script tags in your HTML file like
