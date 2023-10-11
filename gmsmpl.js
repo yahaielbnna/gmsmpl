@@ -63,7 +63,13 @@ function gm(element) {
                     return self;
                 },
                 addClass: (className) => {
-                    el.classList.add(className);
+                    if (typeof className == "object") {
+                        className.forEach(cls => {
+                            el.classList.add(cls);
+                        })
+                    } else {
+                        el.classList.add(className);
+                    }
                     return self;
                 },
                 removeClass: (className) => {
