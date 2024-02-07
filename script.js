@@ -104,3 +104,6 @@ gm("h1").event("click", (_) => {
 // });
 
 console.log(num("712"));
+
+gm('body').addAttrs({ 'attr1': 'value1', 'attr2': 'value2' })
+gm('body').removeAttr(['attr1', 'attr2'])

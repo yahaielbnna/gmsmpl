@@ -1,0 +1,29 @@
+{
+    "li text": {
+        "attributes":{
+            "data-test":"text"
+        },
+        "class" : "test",
+        "id" : "test",
+        "src" : "link",
+        "child": {
+            "tag" : "a",
+            "class" : "test",
+            "id" : "test",
+            "src" : "link",
+            "attributes":{
+                "url":"test",
+                "class": "test",
+                "ID" : "test"
+            },
+            "style":{
+                "width" : "100px",
+                "height" : "50px",
+                "background" : "#000",
+                "color": "#fff",
+                "font-family": "Arial",
+                "font-wight": "bold"
+            }
+        }
+    }
+}

@@ -55,11 +55,23 @@ function gm(element) {
                     el.setAttribute(name, value);
                     return self;
                 },
+                addAttrs: (data) => {
+                    for (const [attrName, attrValue] of Object.entries(data)) {
+                        el.setAttribute(attrName, attrValue);
+                    }
+                    return self;
+                },
                 getAttr: (name) => {
                     return el.getAttribute(name);
                 },
                 removeAttr: (name) => {
-                    el.removeAttribute(name);
+                    if (typeof name == "string") {
+                        el.removeAttribute(name);
+                    } else {
+                        name.forEach(nm => {
+                            el.removeAttribute(nm);
+                        });
+                    }
                     return self;
                 },
                 addClass: (className) => {
@@ -73,11 +85,23 @@ function gm(element) {
                     return self;
                 },
                 removeClass: (className) => {
-                    el.classList.remove(className);
+                    if (typeof className == "object") {
+                        className.forEach(cls => {
+                            el.classList.remove(cls);
+                        })
+                    } else {
+                        el.classList.remove(className);
+                    }
                     return self;
                 },
                 toggleClass: (className) => {
-                    el.classList.toggle(className);
+                    if (typeof className == "object") {
+                        className.forEach(cls => {
+                            el.classList.toggle(cls);
+                        })
+                    } else {
+                        el.classList.toggle(cls);
+                    }
                     return self;
                 },
                 setId: (Id) => {
